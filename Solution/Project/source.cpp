@@ -4,6 +4,7 @@
 
 int main(int argc, char* args[])
 {
+    IMG_Init(IMG_INIT_PNG);
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
     {
         std::cout << "Failed to initialize the SDL2 library\n";
@@ -33,4 +34,5 @@ int main(int argc, char* args[])
     SDL_UpdateWindowSurface(window);
 
     SDL_Delay(5000);
+    return(0);
 }
