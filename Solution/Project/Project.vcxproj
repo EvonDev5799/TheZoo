@@ -161,6 +161,7 @@
     <ClCompile Include="application.cpp" />
     <ClCompile Include="SDL_init.cpp" />
     <ClCompile Include="sheep.cpp" />
+    <ClCompile Include="shepherdDog.cpp" />
     <ClCompile Include="wolf.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,7 +171,13 @@
     <ClInclude Include="SDL_init.h" />
     <ClInclude Include="sheep.h" />
     <ClInclude Include="application.h" />
+    <ClInclude Include="shepherdDog.h" />
     <ClInclude Include="wolf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\media\sheep.png" />
+    <Image Include="..\media\shepherdDog.png" />
+    <Image Include="..\media\wolf.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

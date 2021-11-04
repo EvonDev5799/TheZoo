@@ -13,51 +13,83 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Animals">
+      <UniqueIdentifier>{8ae06ff0-fab9-4c86-82f2-0cf916edfba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Applications">
+      <UniqueIdentifier>{0b948dbb-c81b-4cb4-b6bb-828d2e129e97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animals">
+      <UniqueIdentifier>{a88cce8e-36e2-4c75-9c1e-601b42294c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Applications">
+      <UniqueIdentifier>{8df7c5a4-979c-4f17-b87b-2f07f257b8dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\media">
+      <UniqueIdentifier>{4001b5cd-1322-4e27-8a0d-10b2e37a4916}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="animal.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
     <ClCompile Include="sheep.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
     <ClCompile Include="wolf.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Animals</Filter>
+    </ClCompile>
+    <ClCompile Include="application.cpp">
+      <Filter>Source Files\Applications</Filter>
     </ClCompile>
     <ClCompile Include="ground.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Applications</Filter>
     </ClCompile>
     <ClCompile Include="SDL_init.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="shepherdDog.cpp">
+      <Filter>Source Files\Animals</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sheep.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="animal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wolf.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ground.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="definition.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDL_init.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="animal.h">
+      <Filter>Header Files\Animals</Filter>
     </ClInclude>
+    <ClInclude Include="sheep.h">
+      <Filter>Header Files\Animals</Filter>
+    </ClInclude>
+    <ClInclude Include="wolf.h">
+      <Filter>Header Files\Animals</Filter>
+    </ClInclude>
+    <ClInclude Include="application.h">
+      <Filter>Header Files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="ground.h">
+      <Filter>Header Files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL_init.h">
+      <Filter>Header Files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="shepherdDog.h">
+      <Filter>Header Files\Animals</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\media\sheep.png">
+      <Filter>Resource Files\media</Filter>
+    </Image>
+    <Image Include="..\media\shepherdDog.png">
+      <Filter>Resource Files\media</Filter>
+    </Image>
+    <Image Include="..\media\wolf.png">
+      <Filter>Resource Files\media</Filter>
+    </Image>
   </ItemGroup>
 </Project>
