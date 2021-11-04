@@ -20,7 +20,7 @@ private:
 	uint32_t tempsPrecedent, tempsActuel;
    
 public:
-	application(unsigned n_sheep, unsigned n_wolf); 
+	application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherdDog); 
 	~application();                                 
 
 	int loop(unsigned period); 

@@ -3,12 +3,13 @@
 #include "animal.h"
 #include "sheep.h"
 #include "wolf.h"
+#include "shepherdDog.h"
 #include "definition.h"
 
 
 
 
-application::application(unsigned n_sheep, unsigned n_wolf)
+application::application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherd)
     : tempsActuel(0), tempsPrecedent(0), ground_(ground(NULL)) {
 
     //window
@@ -37,9 +38,14 @@ application::application(unsigned n_sheep, unsigned n_wolf)
         wolf_->draw();
         this->ground_.add_animal(wolf_);
     }
-    //todo window_event_
 
-    
+    for (int i = 0; i < n_shepherd; i++) {
+        sherpherdDog* sherpherdDog_ = new sherpherdDog(this->window_surface_ptr_);
+        this->ground_.add_animal(sherpherdDog_);
+    }
+
+    //todo window_event_
+        
     SDL_UpdateWindowSurface(this->window_ptr_);
 }
 
