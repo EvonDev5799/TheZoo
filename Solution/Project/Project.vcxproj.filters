@@ -54,6 +54,9 @@
     <ClCompile Include="shepherdDog.cpp">
       <Filter>Source Files\Animals</Filter>
     </ClCompile>
+    <ClCompile Include="shepherd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="definition.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files\Applications</Filter>
     </ClInclude>
     <ClInclude Include="shepherdDog.h">
+      <Filter>Header Files\Animals</Filter>
+    </ClInclude>
+    <ClInclude Include="shepherd.h">
       <Filter>Header Files\Animals</Filter>
     </ClInclude>
   </ItemGroup>

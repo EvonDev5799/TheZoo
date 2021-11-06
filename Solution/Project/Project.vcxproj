@@ -162,12 +162,14 @@
     <ClCompile Include="SDL_init.cpp" />
     <ClCompile Include="sheep.cpp" />
     <ClCompile Include="shepherdDog.cpp" />
+    <ClCompile Include="shepherd.cpp" />
     <ClCompile Include="wolf.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animal.h" />
     <ClInclude Include="definition.h" />
     <ClInclude Include="ground.h" />
+    <ClInclude Include="shepherd.h" />
     <ClInclude Include="SDL_init.h" />
     <ClInclude Include="sheep.h" />
     <ClInclude Include="application.h" />
