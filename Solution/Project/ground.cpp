@@ -25,7 +25,7 @@ void ground::update() {
     for (auto pair_ : this->aZoo) {
         
         pair_.first->move();
-        babys_sheep.push_back( offspring(pair_)); //creer des enfants si possible et le stocke
+        babys_sheep.push_back(offspring(pair_)); //creer des enfants si possible et le stocke
         pair_.first->draw();
         
     }
@@ -51,7 +51,6 @@ sheep* ground::offspring(std::pair<animal*, const char*> pPair) {
                 bool bol_relative_x = abs(pPair.first->getPosX() - pair_.first->getPosX()) <= pair_.first->getimage()->w * 0.7;
                 bool bol_relative_y = abs(pPair.first->getPosY() - pair_.first->getPosY()) <= pair_.first->getimage()->h * 0.7;
                 if (bol_relative_x && bol_relative_y) {
-                    std::cout << "proche" << std::endl;
                     if (vSheep1->getSex() == 0 && vSheep1->getCHC() >= vSheep1->getTimeMin()) {
                         std::cout << "sheep::offspring::enfants_start" << std::endl;
                         vSheep1->setHavaCheildren(0);
