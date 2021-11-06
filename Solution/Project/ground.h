@@ -19,21 +19,8 @@ public:
 
 	//méthode 
 	void update(); 
-	sheep* offspring(std::pair<animal*, const char*> pPair);
 
-	/*void wolfprofimity(std::pair<animal*, const char*> pPair);
-	*/
 	//modificateur
-	
-	void add_animal(sheep* ani) { 
-		this->aZoo.emplace(ani, "sheep");
-	}
-	void add_animal(wolf* ani) { 
-		this->aZoo.emplace(ani, "wolf");
-	}
-	void add_animal(animal* ani) {
-		this->aZoo.emplace(ani, "animal");
-	}
-
+	void add_animal(animal* ani);
 	void setScreen_ptr(SDL_Surface* window_surface_ptr);
 };
