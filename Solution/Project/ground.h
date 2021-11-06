@@ -20,6 +20,7 @@ public:
 	//méthode 
 	void update(); 
 	sheep* offspring(std::pair<animal*, const char*> pPair);
+
 	void wolfprofimity(std::pair<animal*, const char*> pPair);
 
 	//modificateur

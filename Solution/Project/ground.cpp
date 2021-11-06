@@ -82,3 +82,6 @@ void ground::wolfprofimity(std::pair<animal*, const char*> pPair){
     if 
 }
 
+
+   
+
