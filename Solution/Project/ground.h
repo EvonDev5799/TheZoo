@@ -21,8 +21,8 @@ public:
 	void update(); 
 	sheep* offspring(std::pair<animal*, const char*> pPair);
 
-	void wolfprofimity(std::pair<animal*, const char*> pPair);
-
+	/*void wolfprofimity(std::pair<animal*, const char*> pPair);
+	*/
 	//modificateur
 	
 	void add_animal(sheep* ani) { 

@@ -76,12 +76,12 @@ sheep* ground::offspring(std::pair<animal*, const char*> pPair) {
     }
     return nullptr;
 }
-
+/*
 void ground::wolfprofimity(std::pair<animal*, const char*> pPair){
     if (pPair.second != "wolf") { return; }
     if 
 }
 
-
+*/
    
 
