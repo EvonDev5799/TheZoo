@@ -1,14 +1,21 @@
 #include "sheep.h"
 #include "definition.h"
 
+
 sheep::sheep(SDL_Surface* sheep_surf)
-    : animal(std::string("./media/sheep.png"), sheep_surf) {
-    this->v_x_ = std::rand() % 26 - 13; // vitesse entre -10 et 10
+    : animal(std::string("./media/sheep.png"), sheep_surf), aCanHaveChieldren(0), aTimeMin(5000){
+
+    //généreer un vitesse entre -13 et +13
+    this->v_x_ = std::rand() % 26 - 13; 
     this->v_y_ = std::rand() % 26 - 13;
+
+    //génération du sex
+    this->aSex = std::rand()%2; //génère 0 ou 1
 }
 
 sheep::~sheep() {}
 
+//méthode
 void sheep::move() {
     this->pos_x_ += (frame_time * this->v_x_);
     this->pos_y_ += (frame_time * this->v_y_);
@@ -31,4 +38,16 @@ void sheep::move() {
         this->pos_y_ = h_;
         this->v_y_ = -std::abs(this->v_y_);
     }
-};
+    sheepUpdate();
+}
+
+void sheep::sheepUpdate() {
+    if (this->aSex == 0) {//si femelle
+        if (this->aCanHaveChieldren < this->aTimeMin)
+            this->aCanHaveChieldren++;
+
+    }
+}
+
+
+

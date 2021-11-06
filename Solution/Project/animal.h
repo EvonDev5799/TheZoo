@@ -18,8 +18,17 @@ public:
     //méthode
     void draw(); 
     virtual void move() = 0; 
-
     //accesseur
-    SDL_Surface* getwindow();
-    SDL_Surface* getimage();
+    SDL_Surface* getwindow() { return window_surface_ptr_; }
+    SDL_Surface* getimage() { return image_ptr_; }        
+    double getPosX() { return pos_x_; }
+    double getPosY() { return pos_y_; }
+    double getSpeedX() { return v_x_; }
+    double getSpeedY() { return v_y_; }
+
+    //modificateur
+    void setPosX(double pDouble) { pos_x_ = pDouble; }
+    void setPosY(double pDouble) { pos_y_ = pDouble; }
+    void setSpeedX(double pDouble) { v_x_ = pDouble; }
+    void setSpeedY(double pDouble) { v_y_ = pDouble; }
 };

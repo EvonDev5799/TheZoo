@@ -7,15 +7,16 @@
 
 
 animal::animal(const std::string& file_path, SDL_Surface* window_surface_ptr)
+    //construction de l'image
     : window_surface_ptr_(window_surface_ptr), v_x_(0), v_y_(0), pos_x_(0), pos_y_(0) {
     this->image_ptr_ = load_surface_for(file_path, window_surface_ptr);
+    //positionnement
     this->pos_x_ = std::rand() % (frame_width - 2 * frame_boundary - image_ptr_->w) + frame_boundary;
     this->pos_y_ = std::rand() % (frame_height - 2 * frame_boundary - image_ptr_->h) + frame_boundary;
-
-
-    //gère le alpha de l'image
+    //gère le canal alpha
     auto color_key = SDL_MapRGB(this->image_ptr_->format, 0, 0, 0);
     SDL_SetColorKey(this->image_ptr_, SDL_TRUE, color_key);
+    
 };
 
 animal::~animal() {
@@ -32,10 +33,3 @@ void animal::draw() {
     SDL_BlitScaled(this->image_ptr_, NULL, this->window_surface_ptr_, &area);
 }
 
-SDL_Surface* animal::getwindow() {
-    return this->window_surface_ptr_;
-}
-
-SDL_Surface* animal::getimage() {
-    return this->image_ptr_;
-}
