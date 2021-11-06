@@ -25,7 +25,7 @@ void ground::update() {
     for (auto pair_ : this->aZoo) {
         
         pair_.first->move();
-        babys_sheep.push_back( offspring(pair_)); //creer des enfants si possible et le stocke
+        babys_sheep.push_back(offspring(pair_)); //creer des enfants si possible et le stocke
         pair_.first->draw();
         
     }
