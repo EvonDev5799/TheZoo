@@ -42,9 +42,9 @@ void Sheep::move() {
 	velocity_.y = (std::rand()%speed) - (speed/2);
 }
 
-Interacting_object* Sheep::interact(Interacting_object* obj)
+Animal* Sheep::interact(Interacting_object* obj)
 {
-	Interacting_object* r = nullptr;
+	Animal* r = nullptr;
 	if (obj->hasTag("predator"))
 	{
 		Rendered_object* predator = dynamic_cast<Rendered_object*>(obj);
