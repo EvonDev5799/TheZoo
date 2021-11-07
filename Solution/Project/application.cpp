@@ -9,8 +9,6 @@
 application::application(int n_sheep, int n_wolf,int n_shepherd)
     : timeTarget_(0), ground_(nullptr) {
 
-    init();
-
     //window
     window_ptr_ = SDL_CreateWindow("Zoo", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, frame_width, frame_height,0);
     if (!window_ptr_) {
@@ -58,9 +56,8 @@ application::~application() {
 }
 
 int application::loop(unsigned period) {
-    Uint32 currentTime_ = SDL_GetTicks();
-    while (currentTime_ < period) {
-        if (currentTime_ >= timeTarget_) {
+    while (SDL_GetTicks() < period) {
+        if (SDL_GetTicks() >= timeTarget_) {
             timeTarget_ += (frame_time * 1000);
             zoo::InputManager::update();
             ground_->update();
@@ -68,7 +65,7 @@ int application::loop(unsigned period) {
         } 
         else 
         {
-            SDL_Delay(timeTarget_ - currentTime_);
+            SDL_Delay(timeTarget_ - SDL_GetTicks());
         }       
     }   
     return 0;
