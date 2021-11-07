@@ -25,7 +25,7 @@ private:
 	uint32_t timeTarget_;
    
 public:
-	application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherdDog); 
+	application(int n_sheep, int n_wolf,int n_shepherdDog); 
 	~application();                                 
 
 	int loop(unsigned period); 
