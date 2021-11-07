@@ -9,6 +9,8 @@
 application::application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherd)
     : timeTarget_(0), ground_(nullptr) {
 
+    init();
+
     //window
     window_ptr_ = SDL_CreateWindow("Zoo", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, frame_width, frame_height,0);
     if (!window_ptr_) {
