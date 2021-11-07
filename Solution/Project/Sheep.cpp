@@ -57,7 +57,9 @@ void Sheep::move() {
 	else if (hasTag("dead"))
 	{
 		removeTag("dead");
-		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
+		image_ = load_surface_for("./media/sheep_d.png", window_);
+		auto color_key = SDL_MapRGB(image_->format, 0, 0, 0);
+		SDL_SetColorKey(image_, SDL_TRUE, color_key);
 	}
 }
 

@@ -6,5 +6,6 @@ class Shepherd :
 public:
     Shepherd(SDL_Point position, SDL_Surface* window);
     Moving_object* interact(Interacting_object* obj) override;
+
 };
 
