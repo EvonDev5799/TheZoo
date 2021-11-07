@@ -40,7 +40,7 @@ int sqareRange(SDL_Point a, SDL_Point b)
 {
 	int xRange = abs(a.x - b.x);
 	int yRange = abs(a.y - b.y);
-	return(std::min(xRange, yRange));
+	return(std::max(xRange, yRange));
 }
 
 float norme(SDL_Point v) {

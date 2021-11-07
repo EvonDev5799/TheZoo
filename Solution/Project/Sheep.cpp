@@ -76,7 +76,7 @@ Animal* Sheep::interact(Interacting_object* obj)
 		{
 			Rendered_object* partner = dynamic_cast<Rendered_object*>(obj);
 
-			if (inRange(position_, partner->getPosition(), 15))
+			if (inRange(position_, partner->getPosition(), 5))
 				r = mate();
 		}
 	}
