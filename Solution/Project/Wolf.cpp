@@ -59,7 +59,7 @@ Animal* Wolf::interact(Interacting_object* obj)
 
 	if (hungerCount_ <= 0) {
 		removeTag("alive");
-
+		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
 	}
 	return nullptr;
 }
