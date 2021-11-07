@@ -165,6 +165,7 @@
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="interacting_object.cpp" />
     <ClCompile Include="moving_object.cpp" />
+    <ClCompile Include="Playable_character.cpp" />
     <ClCompile Include="rendered_object.cpp" />
     <ClCompile Include="Sheep.cpp" />
     <ClCompile Include="ShepherdDogs.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="inputManager.h" />
     <ClInclude Include="interacting_object.h" />
     <ClInclude Include="moving_object.h" />
+    <ClInclude Include="Playable_character.h" />
     <ClInclude Include="rendered_object.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="ShepherdDogs.h" />

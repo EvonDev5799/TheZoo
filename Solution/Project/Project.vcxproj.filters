@@ -51,6 +51,9 @@
     <ClCompile Include="ShepherdDogs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Playable_character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inputManager.h">
@@ -87,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ShepherdDogs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Playable_character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
