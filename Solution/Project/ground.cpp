@@ -17,20 +17,21 @@ void Ground::update()
 		a->move();
 	}
 
-	for(auto main : zoo_)
-		for (auto secondary : zoo_)
+	for (auto first : zoo_)
+	{
+		first->move();
+
+		for (auto second : zoo_)
 		{
-			if (main != secondary)
+			if (first != second)
 			{
-				auto newAnimal = main->interact(secondary);
+				auto newAnimal = first->interact(second);
 				if (newAnimal != nullptr)
 					add_animal(newAnimal);
 			}
 		}
 
-	for (auto a : zoo_)
-	{
-		a->step();
+		first->step();
 	}
 }
 
