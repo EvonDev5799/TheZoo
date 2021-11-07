@@ -11,8 +11,15 @@ SDL_Point sum(SDL_Point a, SDL_Point b)
 SDL_Point mult(float scalare , SDL_Point b)
 {
 	SDL_Point r;
-	r.x = scalare * r.x;
-	r.y = scalare * r.y;
+	r.x = scalare * b.x;
+	r.y = scalare * b.y;
+	return(r);
+}
+SDL_Point div(float scalare, SDL_Point b)
+{
+	SDL_Point r;
+	r.x = scalare / b.x;
+	r.y = scalare / b.y;
 	return(r);
 }
 
@@ -50,3 +57,17 @@ SDL_Point UnitVector(SDL_Point v) {
 	return r;
 }
 
+SDL_Point construcVector(SDL_Point referecne_point, SDL_Point other_point) {
+	SDL_Point r;
+	r.x =  other_point.x - referecne_point.x;
+	r.y = other_point.y - referecne_point.y;
+	return r;
+	
+}
+
+SDL_Point focusdirection(SDL_Point reference, SDL_Point focus) {
+	float norme_reference = norme(reference);
+	SDL_Point new_velocity = construcVector(reference, focus);
+	new_velocity = div(norme(new_velocity), new_velocity);
+	return mult(norme_reference,new_velocity);
+}
