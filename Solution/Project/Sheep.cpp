@@ -90,5 +90,6 @@ Interacting_object* Sheep::mate()
 	r = new Sheep(position_, window_);
 	removeTag("rested");
 	restCounter_ = frame_rate * 5;
+	return(r);
 }
 
