@@ -39,6 +39,11 @@ Animal* Wolf::interact(Interacting_object* obj)
 		}
 		
 	}
+
+	if (hungerCount_ <= 0) {
+		removeTag("alive");
+
+	}
 	return nullptr;
 }
 
