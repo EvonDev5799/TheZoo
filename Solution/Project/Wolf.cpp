@@ -57,7 +57,7 @@ Animal* Wolf::interact(Interacting_object* obj)
 				velocity_ = dirAndLenght(dir, 7);
 			}
 		}
-		else if (obj->hasTag("dog"))
+		else if (obj->hasTag("protector"))
 		{
 			closestRange = sqareRange(position_, animal_pos);
 			SDL_Point dir = diff(animal_pos, position_);
