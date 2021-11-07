@@ -9,7 +9,6 @@
 application::application(int n_sheep, int n_wolf,int n_shepherd)
     : timeTarget_(0), ground_(nullptr) {
 
-    init();
 
     //window
     window_ptr_ = SDL_CreateWindow("Zoo", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, frame_width, frame_height,0);
@@ -74,19 +73,3 @@ int application::loop(unsigned period) {
     return 0;
 }
 
-
- void application::init() {
-    // Initialize SDL
-    if (SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO) < 0)
-        throw std::runtime_error("init():" + std::string(SDL_GetError()));
-
-    // Initialize PNG loading
-    int imgFlags = IMG_INIT_PNG;
-    if (!(IMG_Init(imgFlags) & imgFlags))
-        throw std::runtime_error("init(): SDL_image could not initialize! "
-            "SDL_image Error: " +
-            std::string(IMG_GetError()));
-
-
-    std::cout << "Done with initilization" << std::endl;
-}
