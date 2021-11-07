@@ -75,6 +75,7 @@ Animal* Wolf::interact(Interacting_object* obj)
 			if (range < 50)
 			{
 				obj->removeTag("alive");
+				obj->addTag("dead");
 				hungerCount_ += frame_rate * 2;
 			}
 			else if (range < closestRange)
