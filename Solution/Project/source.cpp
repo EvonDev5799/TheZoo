@@ -1,128 +1,31 @@
-#include <SDL.h>
-#include <iostream>
+#pragma once
+
+#include "application.h"
+#include <stdio.h>
 #include <string>
 
-namespace zoo {
-	constexpr SDL_KeyCode upKey = SDLK_z;
-	constexpr SDL_KeyCode downKey = SDLK_s;
-	constexpr SDL_KeyCode leftKey = SDLK_q;
-	constexpr SDL_KeyCode rightKey = SDLK_d;
+int main(int argc, char* argv[]) {
 
-	enum dir
-	{
-		up,
-		right,
-		left,
-		down,
-		click
-	};
+    std::cout << "Starting up the application" << std::endl;
 
-	bool inputDown[4] = { 0,0,0,0 };
+    if (argc != 5)
+        throw std::runtime_error("Need three arguments - "
+            "number of sheep, number of wolves,number of sheepherdDog "
+            "simulation time\n");
 
-	SDL_Point dir = { 0,0 };
-	SDL_Point mouse = { 0,0 };
+    application::init();
 
-	bool manageEvent()
-	{
-		//Event handler
-		SDL_Event e;
-		bool r = false;
+    std::cout << "Done with initilization" << std::endl;
 
-		while (SDL_PollEvent(&e) != 0)
-		{
-			//User requests quit
-			if (e.type == SDL_QUIT)
-				r = true;
-			else if (e.type == SDL_KEYDOWN)
-			{
-				switch (e.key.keysym.sym)
-				{
-				case(leftKey):
-					inputDown[left] = 1;
-					break;
-				case(rightKey):
-					inputDown[right] = 1;
-					break;
-				case(upKey):
-					inputDown[up] = 1;
-					break;
-				case(downKey):
-					inputDown[down] = 1;
-					break;
-				default:
-					break;
-				}
-			}
-			else if (e.type == SDL_KEYUP)
-			{
-				switch (e.key.keysym.sym)
-				{
-				case(leftKey):
-					inputDown[left] = 0;
-					break;
-				case(rightKey):
-					inputDown[right] = 0;
-					break;
-				case(upKey):
-					inputDown[up] = 0;
-					break;
-				case(downKey):
-					inputDown[down] = 0;
-					break;
-				default:
-					break;
-				}
-			}
-			else if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)
-			{	
-				std::cout << "click(" << mouse.x << "," << mouse.y << ")" << std::endl;
-			}
-			else if (e.type == SDL_MOUSEMOTION)
-			{
-				mouse = { e.motion.x, e.motion.y };
-			}
-		}
-		return(r);
-	}
-}
-int main(int argc, char* args[])
-{
-	SDL_Window* mainWindow = nullptr;
-	SDL_Surface* mainSurface = nullptr;
+    application my_app(std::stoul(argv[1]), std::stoul(argv[2]), std::stoul(argv[3]));
 
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		std::cout << "failed to init SDL, error: " << SDL_GetError() << std::endl;
-		return(1);
-	}
-	else
-	{
-		mainWindow = SDL_CreateWindow("Title", 100, 100, 500, 300, SDL_WINDOW_SHOWN);
-		if (mainWindow == nullptr)
-		{
-			std::cout << "couldn't create window, error: " << SDL_GetError() << std::endl;
-			return(1);
-		}
-		else
-		{
-			mainSurface = SDL_GetWindowSurface(mainWindow);
-		}
-	}
+    std::cout << "Created window" << std::endl;
 
-	bool quit = false;
+    int retval = my_app.loop(std::stoul(argv[4]));
 
+    std::cout << "Exiting application with code " << retval << std::endl;
 
-	//While application is running
-	while (!quit)
-	{
-		SDL_Delay(100);
-		quit = zoo::manageEvent();
-		SDL_UpdateWindowSurface(mainWindow);
-		std::cout << " up: " << zoo::inputDown[zoo::up] << " down: " << zoo::inputDown[zoo::down] << " right: " << zoo::inputDown[zoo::right] << " leeft: " << zoo::inputDown[zoo::left] << std::endl;
-	}
+    my_app.~application();
 
-	SDL_FreeSurface(mainSurface);
-	SDL_DestroyWindow(mainWindow);
-
-	return 0;
+    return retval;
 }
