@@ -7,4 +7,4 @@ constexpr unsigned frame_width = 1200; // Width of window in pixel
 constexpr unsigned frame_height = 900; // Height of window in pixel
 
 // Minimal distance of animals to the border of the screen
-constexpr unsigned frame_boundary = 200;
+constexpr unsigned frame_boundary = 100;

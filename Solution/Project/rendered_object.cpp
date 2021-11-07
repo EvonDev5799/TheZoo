@@ -15,7 +15,7 @@ SDL_Surface* load_surface_for(const std::string& path, SDL_Surface* window_surfa
 		std::cout << "Error during creation of surface." << std::endl;
 		return (nullptr);
 	}
-
+	
 	return (surf);
 
 }
@@ -23,7 +23,8 @@ SDL_Surface* load_surface_for(const std::string& path, SDL_Surface* window_surfa
 Rendered_object::Rendered_object(SDL_Point position, const std::string& image_path, SDL_Surface* window) :
 	position_(position), image_(load_surface_for(image_path, window)), window_(window), scale_(1)
 {
-
+	auto color_key = SDL_MapRGB(image_->format, 0, 0, 0);
+	SDL_SetColorKey(image_, SDL_TRUE, color_key);
 }
 
 
