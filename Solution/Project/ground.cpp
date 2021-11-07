@@ -12,15 +12,10 @@ Ground::~Ground()
 
 void Ground::update()
 {
-	for (auto a : zoo_)
-	{
-		a->move();
-	}
+	for (auto main : zoo_) {
+		main->move();
 
-	for (auto first : zoo_)
-	{
-		first->move();
-
+	for(auto first : zoo_)
 		for (auto second : zoo_)
 		{
 			if (first != second)
@@ -30,9 +25,6 @@ void Ground::update()
 					add_animal(newAnimal);
 			}
 		}
-
-		first->step();
-	}
 }
 
 void Ground::add_animal(Animal* pAnimal)
