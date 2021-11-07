@@ -29,5 +29,4 @@ public:
 	~application();                                 
 
 	int loop(unsigned period); 
-	static void init();
 };

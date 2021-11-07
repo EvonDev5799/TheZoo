@@ -45,7 +45,7 @@ void Sheep::move() {
 Animal* Sheep::interact(Interacting_object* obj)
 {
 	Animal* r = nullptr;
-	if (obj->hasTag("predator"))
+	if (obj->hasTag("predator")&&obj->hasTag("alive"))
 	{
 		Rendered_object* predator = dynamic_cast<Rendered_object*>(obj);
 		SDL_Point predatorPos = predator->getPosition();
