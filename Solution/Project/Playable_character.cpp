@@ -2,6 +2,11 @@
 #include "inputManager.h"
 #include "tools.h"
 
+Playable_character::Playable_character(SDL_Point position, std::string image_path, SDL_Surface* window) :
+	Moving_object(position, image_path, window)
+{
+}
+
 void Playable_character::move()
 {
 	SDL_Point dir = { 0, 0 };

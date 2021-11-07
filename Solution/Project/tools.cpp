@@ -49,14 +49,6 @@ float norme(SDL_Point v) {
 	return norme;
 }
 
-SDL_Point UnitVector(SDL_Point v) {
-	SDL_Point r;
-	auto norme_ = norme(v);
-	r.x = v.x / norme_;
-	r.y = v.y / norme_;
-	return r;
-}
-
 SDL_Point construcVector(SDL_Point referecne_point, SDL_Point other_point) {
 	SDL_Point r;
 	r.x =  other_point.x - referecne_point.x;
