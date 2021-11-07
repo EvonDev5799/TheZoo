@@ -7,7 +7,7 @@
 
 
 application::application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherd)
-    : tempsActuel(0), tempsPrecedent(0), ground_(ground(NULL)) {
+    : tempsActuel(0), tempsPrecedent(0), ground_(Ground(NULL)) {
 
     //window
     this->window_ptr_ = SDL_CreateWindow("Zoo", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, frame_width, frame_height,0);
