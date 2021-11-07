@@ -21,8 +21,8 @@ private:
 	//SDL_Event window_event_;
 
 	// Other attributes here, for example an instance of ground
-	ground ground_;
-	uint32_t tempsPrecedent, tempsActuel;
+	Ground* ground_;
+	uint32_t timeTarget_;
    
 public:
 	application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherdDog); 
