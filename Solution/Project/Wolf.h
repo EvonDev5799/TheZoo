@@ -7,7 +7,7 @@ class Wolf :
 public:
     Wolf(SDL_Point position, SDL_Surface* window);
     void move() override;
-    virtual Interacting_object* interact(Interacting_object* obj) override;
+    Animal* interact(Interacting_object* obj) override;
 
 private:
     int hungerCount_;

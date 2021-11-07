@@ -168,6 +168,7 @@
     <ClCompile Include="moving_object.cpp" />
     <ClCompile Include="rendered_object.cpp" />
     <ClCompile Include="Sheep.cpp" />
+    <ClCompile Include="ShepherdDogs.cpp" />
     <ClCompile Include="source.cpp" />
     <ClCompile Include="tools.cpp" />
     <ClCompile Include="Wolf.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="moving_object.h" />
     <ClInclude Include="rendered_object.h" />
     <ClInclude Include="Sheep.h" />
+    <ClInclude Include="ShepherdDogs.h" />
     <ClInclude Include="tools.h" />
     <ClInclude Include="Wolf.h" />
   </ItemGroup>

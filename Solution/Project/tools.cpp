@@ -18,7 +18,7 @@ SDL_Point diff(SDL_Point end, SDL_Point start)
 
 bool inRange(SDL_Point a, SDL_Point b, int range)
 {
-	return((sqareRange(a, b) < range);
+	return((sqareRange(a, b) < range));
 }
 
 int sqareRange(SDL_Point a, SDL_Point b)
@@ -26,4 +26,10 @@ int sqareRange(SDL_Point a, SDL_Point b)
 	int xRange = abs(a.x - b.x);
 	int yRange = abs(a.y - b.y);
 	return(std::min(xRange, yRange));
+}
+
+
+SDL_Point UnitVecteur(SDL_Point) {
+	float 
+
 }

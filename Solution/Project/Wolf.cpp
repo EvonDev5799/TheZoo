@@ -10,7 +10,7 @@ void Wolf::move()
 	closestRange_Sheep = frame_height + frame_width;
 }
 
-void Wolf::interact(Interacting_object* obj)
+Animal* Wolf::interact(Interacting_object* obj)
 {
 	if (obj->hasTag("alive") ){
 		if (obj->hasTag("prey") ) //sheep or other
