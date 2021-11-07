@@ -17,10 +17,10 @@ void Moving_object::step()
     if (position_.y <= frame_boundary) {
         position_.y = frame_boundary;
     }
-    if (position_.x >= 0) {
+    if (position_.x >= frame_width - frame_boundary) {
         position_.x = 0;
     }
-    if (position_.y >= 0) {
+    if (position_.y >= frame_height - frame_boundary) {
         position_.y = 0;
     }
 }
