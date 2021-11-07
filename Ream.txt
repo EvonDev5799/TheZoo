@@ -1,0 +1,11 @@
+Le projet à été réaliser sous Visual Studio.
+
+Le différente classe ont été hiérachisé selon le schéma fourni.
+
+Le fonction main prend comme argument le nombre de mouton, le nomtre de loup, le nombre de chien, le temps de jeu en miliseconde.
+
+L'éxécutable se trouve dans /TheZoo/Solution/x64/Debug, pour compiler il est neccessaire d'avoir le répertoire média dans le répertoire de l'exécutable.
+
+Se qui manque : le bonus du click sourris et celui du score sur le l'application, il s'affiche dans la conssole.
+
+Petit plus : le jour peu se défouller et piétinier les loups pour les tuéer.
