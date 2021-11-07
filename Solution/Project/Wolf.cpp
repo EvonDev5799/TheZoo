@@ -16,22 +16,49 @@ Wolf::Wolf(SDL_Point position, SDL_Surface* window) :
 
 void Wolf::move()
 {
-	
-	if (position_.x <= frame_boundary) {
-		velocity_.x = abs(velocity_.x);
-	}
-	if (position_.y <= frame_boundary) {
-		velocity_.y = abs(velocity_.y);
-	}
-	if (position_.x >= frame_width - frame_boundary) {
-		velocity_.x = -abs(velocity_.x);
-	}
-	if (position_.y >= frame_height - frame_boundary) {
-		velocity_.y = -abs(velocity_.y);
-	}
+	if (hasTag("alive"))
+	{
+		if (position_.x <= frame_boundary) {
+			velocity_.x = abs(velocity_.x);
+		}
+		if (position_.y <= frame_boundary) {
+			velocity_.y = abs(velocity_.y);
+		}
+		if (position_.x >= frame_width - frame_boundary) {
+			velocity_.x = -abs(velocity_.x);
+		}
+		if (position_.y >= frame_height - frame_boundary) {
+			velocity_.y = -abs(velocity_.y);
+		}
 
-	closestRange = frame_height + frame_width;
-	hungerCount_--;
+		closestRange = frame_height + frame_width;
+		hungerCount_--;
+		if (position_.x <= frame_boundary) {
+			velocity_.x = abs(velocity_.x);
+		}
+		if (position_.y <= frame_boundary) {
+			velocity_.y = abs(velocity_.y);
+		}
+		if (position_.x >= frame_width - frame_boundary) {
+			velocity_.x = -abs(velocity_.x);
+		}
+		if (position_.y >= frame_height - frame_boundary) {
+			velocity_.y = -abs(velocity_.y);
+		}
+
+		closestRange = frame_height + frame_width;
+		hungerCount_--;
+
+		if (hungerCount_ <= 0) {
+			removeTag("alive");
+			addTag("dead");
+		}
+	}
+	else if (hasTag("dead"))
+	{
+		removeTag("dead");
+		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
+	}
 }
 
 Animal* Wolf::interact(Interacting_object* obj)
@@ -63,11 +90,6 @@ Animal* Wolf::interact(Interacting_object* obj)
 			SDL_Point dir = diff(animal_pos, position_);
 			velocity_ = dirAndLenght(dir, -7);
 		}		
-	}
-
-	if (hungerCount_ <= 0) {
-		removeTag("alive");
-		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
 	}
 	return nullptr;
 }

@@ -28,31 +28,37 @@ Sheep::Sheep(SDL_Point position, SDL_Surface* window) :
 
 void Sheep::move() {
 	
-
-	if (position_.x <= frame_boundary) {
-		velocity_.x = abs(velocity_.x);
-	}
-	if (position_.y <= frame_boundary) {
-		velocity_.y = abs(velocity_.y);
-	}
-	if (position_.x >= frame_width - frame_boundary) {
-		velocity_.x = -abs(velocity_.x);
-	}
-	if (position_.y >= frame_height - frame_boundary) {
-		velocity_.y = -abs(velocity_.y);
-	}
-	if (maturityCounter_ == 0)
+	if (hasTag("alive"))
 	{
-		grow();
+		if (position_.x <= frame_boundary) {
+			velocity_.x = abs(velocity_.x);
+		}
+		if (position_.y <= frame_boundary) {
+			velocity_.y = abs(velocity_.y);
+		}
+		if (position_.x >= frame_width - frame_boundary) {
+			velocity_.x = -abs(velocity_.x);
+		}
+		if (position_.y >= frame_height - frame_boundary) {
+			velocity_.y = -abs(velocity_.y);
+		}
+		if (maturityCounter_ == 0)
+		{
+			grow();
+		}
+		if (restCounter_ == 0)
+		{
+			ready();
+		}
+
+		if (maturityCounter_ > 0) maturityCounter_--;
+		if (restCounter_ > 0) restCounter_--;
 	}
-	if (restCounter_ == 0)
+	else if (hasTag("dead"))
 	{
-		ready();
+		removeTag("dead");
+		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
 	}
-
-	if (maturityCounter_ > 0) maturityCounter_--;
-	if (restCounter_ > 0) restCounter_--;
-
 }
 
 Animal* Sheep::interact(Interacting_object* obj)
