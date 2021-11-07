@@ -161,11 +161,17 @@
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="inputManager.cpp" />
+    <ClCompile Include="interacting_object.cpp" />
+    <ClCompile Include="moving_object.cpp" />
+    <ClCompile Include="rendered_object.cpp" />
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="inputManager.h" />
+    <ClInclude Include="interacting_object.h" />
+    <ClInclude Include="moving_object.h" />
+    <ClInclude Include="rendered_object.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
