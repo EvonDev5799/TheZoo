@@ -46,11 +46,13 @@ Animal* Wolf::interact(Interacting_object* obj)
 			closestRange = sqareRange(position_, animal_pos);
 			if (obj->hasTag("prey")) //sheep or other
 			{
-				velocity_ = focusdirection(velocity_, animal_pos);
+				SDL_Point dir = diff(animal_pos, position_);
+				velocity_ = dirAndLenght(dir, 7);
 			}
 			if (obj->hasTag("dog")) //chien du berger 
 			{
-				velocity_ = diff({ 0,0 }, focusdirection(velocity_, animal_pos)); // par à l'opposé
+				SDL_Point dir = diff(animal_pos, position_);
+				velocity_ = dirAndLenght(dir, -7);
 			}
 			
 		}
@@ -59,7 +61,7 @@ Animal* Wolf::interact(Interacting_object* obj)
 
 	if (hungerCount_ <= 0) {
 		removeTag("alive");
-
+		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
 	}
 	return nullptr;
 }
