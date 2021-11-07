@@ -15,9 +15,10 @@ void Ground::update()
 	std::vector<Moving_object*> toAdd;
 	for (auto first : zoo_)
 	{
+		first->move();
+
 		if (first->hasTag("alive"))
 		{
-			first->move();
 			for (auto second : zoo_)
 			{
 				if (first != second)
