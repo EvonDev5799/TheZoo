@@ -11,7 +11,6 @@ public:
 
 private:
     int hungerCount_;
-    int closestRange_Dog;
-    int closestRange_Sheep;
+    int closestRange;
 };
 
