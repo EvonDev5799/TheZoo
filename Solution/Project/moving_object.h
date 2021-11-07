@@ -3,12 +3,17 @@
 class Moving_object :
     public Rendered_object
 {
-    Moving_object(SDL_Point position, SDL_Surface* image);
+public:
+    Moving_object(SDL_Point position, const std::string& image_path, SDL_Surface* window);
 
+    // apply the current velocity to the current position
     void step();
+
+    // modify the velocity, require override from child classes
     virtual void move() = 0;
 
-private:
+protected:
+    //SDL_Point = 2dimensional vector
     SDL_Point velocity_;
 };
 

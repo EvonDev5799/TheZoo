@@ -4,10 +4,6 @@ Interacting_object::Interacting_object() : tags_({})
 {
 }
 
-Interacting_object::Interacting_object(std::set<std::string> tags) : tags_(tags)
-{
-}
-
 bool Interacting_object::hasTag(std::string tag)
 {
 	return( tags_.find(tag) != tags_.end());

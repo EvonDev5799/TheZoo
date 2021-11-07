@@ -1,11 +1,26 @@
 #include "moving_object.h"
+#include "definitions.h"
 
-Moving_object::Moving_object(SDL_Point position, SDL_Surface* image) : Rendered_object(position, image), velocity_({ 0,0 })
+Moving_object::Moving_object(SDL_Point position, const std::string& image_path, SDL_Surface* window) :
+	Rendered_object(position, image_path, window), velocity_({ 0,0 })
 {
 }
 
 void Moving_object::step()
 {
-	posisiton_.x += velocity_.x;
-	posisiton_.y += velocity_.y;
+	position_.x += velocity_.x;
+	position_.y += velocity_.y;
+
+    if (position_.x <= frame_boundary) {
+        position_.x = frame_boundary;
+    }
+    if (position_.y <= frame_boundary) {
+        position_.y = frame_boundary;
+    }
+    if (position_.x >= 0) {
+        position_.x = 0;
+    }
+    if (position_.y >= 0) {
+        position_.y = 0;
+    }
 }
