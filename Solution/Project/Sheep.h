@@ -11,7 +11,7 @@ public:
 private:
     void grow();
     void ready();
-    Interacting_object* mate();
+    Animal* mate();
 
     int maturityCounter_;
     int restCounter_;

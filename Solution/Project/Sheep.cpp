@@ -83,7 +83,7 @@ void Sheep::ready()
 	restCounter_ == -1;
 }
 
-Interacting_object* Sheep::mate()
+Animal* Sheep::mate()
 {
 	//TODO: create new sheep
 	Rendered_object* r;
