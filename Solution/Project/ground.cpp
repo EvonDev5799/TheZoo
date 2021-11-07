@@ -12,19 +12,24 @@ Ground::~Ground()
 
 void Ground::update()
 {
-	for (auto main : zoo_) {
-		main->move();
-
-	for(auto first : zoo_)
-		for (auto second : zoo_)
+	for (auto first : zoo_)
+	{
+		if (first->hasTag("alive"))
 		{
-			if (first != second)
+			first->move();
+			for (auto second : zoo_)
 			{
-				auto newAnimal = first->interact(second);
-				if (newAnimal != nullptr)
-					add_animal(newAnimal);
+				if (first != second)
+				{
+					auto newAnimal = first->interact(second);
+					if (newAnimal != nullptr)
+						add_animal(newAnimal);
+				}
 			}
+			first->step();
 		}
+		first->draw();
+	}
 }
 
 void Ground::add_animal(Animal* pAnimal)
