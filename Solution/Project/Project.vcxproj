@@ -159,6 +159,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Project_final - Copie\TheZoo\Solution\Project\application.cpp" />
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="inputManager.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Wolf.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Project_final - Copie\TheZoo\Solution\Project\application.h" />
     <ClInclude Include="Animal.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="Game.hpp" />

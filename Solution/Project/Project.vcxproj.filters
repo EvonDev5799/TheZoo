@@ -45,6 +45,9 @@
     <ClCompile Include="Wolf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Project_final - Copie\TheZoo\Solution\Project\application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inputManager.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Wolf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Project_final - Copie\TheZoo\Solution\Project\application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
