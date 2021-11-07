@@ -8,6 +8,14 @@ SDL_Point sum(SDL_Point a, SDL_Point b)
 	return(r);
 }
 
+SDL_Point mult(float scalare , SDL_Point b)
+{
+	SDL_Point r;
+	r.x = scalare * r.x;
+	r.y = scalare * r.y;
+	return(r);
+}
+
 SDL_Point diff(SDL_Point end, SDL_Point start)
 {
 	SDL_Point r;
@@ -28,8 +36,17 @@ int sqareRange(SDL_Point a, SDL_Point b)
 	return(std::min(xRange, yRange));
 }
 
-
-SDL_Point UnitVecteur(SDL_Point) {
-	float 
-
+float norme(SDL_Point v) {
+	float pytagore = v.x * v.x + v.y * v.y;
+	float norme = std::sqrt(pytagore);
+	return norme;
 }
+
+SDL_Point UnitVector(SDL_Point v) {
+	SDL_Point r;
+	auto norme_ = norme(v);
+	r.x = v.x / norme_;
+	r.y = v.y / norme_;
+	return r;
+}
+
