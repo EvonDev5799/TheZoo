@@ -15,12 +15,12 @@ bool Interacting_object::hasTag(std::string tag)
 
 void Interacting_object::removeTag(std::string tag)
 {
-	tags_.insert(tag);
+	tags_.erase(tag);
 }
 
 void Interacting_object::addTag(std::string tag)
 {
-	tags_.erase(tag);
+	tags_.insert(tag);
 }
 
 

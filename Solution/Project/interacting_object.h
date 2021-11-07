@@ -8,6 +8,7 @@ public:
 	//Constructors
 	Interacting_object();
 	Interacting_object(std::set<std::string> tags);
+
 	virtual void interact(Interacting_object& obj) = 0;
 
 	//Accessor
