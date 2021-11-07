@@ -16,6 +16,20 @@ Wolf::Wolf(SDL_Point position, SDL_Surface* window) :
 
 void Wolf::move()
 {
+	
+	if (position_.x <= frame_boundary) {
+		velocity_.x = abs(velocity_.x);
+	}
+	if (position_.y <= frame_boundary) {
+		velocity_.y = abs(velocity_.y);
+	}
+	if (position_.x >= frame_width - frame_boundary) {
+		velocity_.x = -abs(velocity_.x);
+	}
+	if (position_.y >= frame_height - frame_boundary) {
+		velocity_.y = -abs(velocity_.y);
+	}
+
 	closestRange = frame_height + frame_width;
 	hungerCount_--;
 }

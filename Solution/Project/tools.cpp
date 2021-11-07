@@ -60,7 +60,7 @@ SDL_Point construcVector(SDL_Point referecne_point, SDL_Point other_point) {
 SDL_Point focusdirection(SDL_Point reference, SDL_Point focus) {
 	float norme_reference = norme(reference);
 	SDL_Point new_velocity = construcVector(reference, focus);
-	new_velocity = div(norme(new_velocity), new_velocity);
+	new_velocity = dirAndLenght(new_velocity, norme_reference);
 	return mult(norme_reference,new_velocity);
 }
 
