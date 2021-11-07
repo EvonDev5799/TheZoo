@@ -21,6 +21,6 @@ void Moving_object::step()
         velocity_.x = frame_height - frame_boundary;
     }
     if (position_.y >= frame_height - frame_boundary) {
-        velocity_.y = frame_height - frame_boundary);
+        velocity_.y = frame_height - frame_boundary;
     }
 }
