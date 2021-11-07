@@ -12,6 +12,10 @@ Sheep::Sheep(SDL_Point position, SDL_Surface* window) :
 	addTag("sheep");
 	addTag("prey");
 
+	int speed = 10;
+	velocity_.x = (std::rand() % speed) - (speed / 2);
+	velocity_.y = (std::rand() % speed) - (speed / 2);
+
 	//Coin Toss
 	if (std::rand() % 2 == 0)
 	{
@@ -35,11 +39,6 @@ void Sheep::move() {
 	if (maturityCounter_ > 0) maturityCounter_--;
 	if (restCounter_ > 0) restCounter_--;
 
-
-
-	int speed = 11;
-	velocity_.x = (std::rand()%speed) - (speed/2);
-	velocity_.y = (std::rand()%speed) - (speed/2);
 }
 
 Animal* Sheep::interact(Interacting_object* obj)
