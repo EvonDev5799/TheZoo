@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿#pragma once
 #include "application.h"
 
@@ -94,6 +95,8 @@ int application::loop(unsigned period) {
 
     std::cout << "Done with initilization" << std::endl;
 =======
+=======
+>>>>>>> 196898030368d2f1c50421f17de1cb8e91b26d6c
 ﻿#pragma once
 #include "application.h"
 
@@ -188,5 +191,8 @@ int application::loop(unsigned period) {
 
 
     std::cout << "Done with initilization" << std::endl;
+<<<<<<< HEAD
+>>>>>>> 196898030368d2f1c50421f17de1cb8e91b26d6c
+=======
 >>>>>>> 196898030368d2f1c50421f17de1cb8e91b26d6c
 }
