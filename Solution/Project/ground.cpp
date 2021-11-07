@@ -12,7 +12,7 @@ Ground::~Ground()
 
 void Ground::update()
 {
-	std::vector<Animal*> toAdd;
+	std::vector<Moving_object*> toAdd;
 	for (auto first : zoo_)
 	{
 		if (first->hasTag("alive"))
@@ -34,12 +34,12 @@ void Ground::update()
 
 	for (auto a : toAdd)
 	{
-		add_animal(a);
+		add(a);
 		a->draw();
 	}
 }
 
-void Ground::add_animal(Animal* pAnimal)
+void Ground::add(Moving_object* pAnimal)
 {
 	zoo_.push_back(pAnimal);
 }
