@@ -6,7 +6,7 @@
 
 
 
-application::application(unsigned n_sheep, unsigned n_wolf,unsigned n_shepherd)
+application::application(int n_sheep, int n_wolf,int n_shepherd)
     : timeTarget_(0), ground_(nullptr) {
 
     //window
