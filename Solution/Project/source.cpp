@@ -1,18 +1,31 @@
-#include <SDL.h>
-#include <iostream>
+#pragma once
+
+#include "application.h"
+#include <stdio.h>
 #include <string>
-#include "Game.hpp"
 
+int main(int argc, char* argv[]) {
 
-int main(int argc)
-{
-	
-	Game* Game_ = new Game();
+    std::cout << "Starting up the application" << std::endl;
 
-	//While application is running
-	
-	Game_->loop();
-	Game_->~Game();
+    if (argc != 5)
+        throw std::runtime_error("Need three arguments - "
+            "number of sheep, number of wolves,number of sheepherdDog "
+            "simulation time\n");
 
-	return 0;
+    application::init();
+
+    std::cout << "Done with initilization" << std::endl;
+
+    application my_app(std::stoul(argv[1]), std::stoul(argv[2]), std::stoul(argv[3]));
+
+    std::cout << "Created window" << std::endl;
+
+    int retval = my_app.loop(std::stoul(argv[4]));
+
+    std::cout << "Exiting application with code " << retval << std::endl;
+
+    my_app.~application();
+
+    return retval;
 }

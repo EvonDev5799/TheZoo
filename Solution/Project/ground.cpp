@@ -25,12 +25,14 @@ void ground::update() {
     SDL_FillRect(this->window_surface_ptr_, NULL, SDL_MapRGB(this->window_surface_ptr_->format, 0, 127, 0));
     auto babys_sheep = std::vector<Sheep*>();
     for (auto vAnimal1 : this->aZoo) {
-        
+
         vAnimal1->move();
-        for (auto vAnimal2 : this->aZoo)
-            if (vAnimal1!=vAnimal2)
-                
-                vAnimal1->interact(vAnimal2); 
+        for (auto vAnimal2 : this->aZoo) {
+            babys_sheep.push_back(offspring((vAnimal1)));
+            if (vAnimal1 != vAnimal2) {
+                vAnimal1->interact(vAnimal2);
+            }
+        }
         vAnimal1->draw();
         
     }
