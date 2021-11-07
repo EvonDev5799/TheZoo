@@ -42,18 +42,18 @@ void Sheep::move() {
 	velocity_.y = (std::rand()%speed) - (speed/2);
 }
 
-void Sheep::interact(Interacting_object* obj)
+Interacting_object* Sheep::interact(Interacting_object* obj)
 {
-	if (obj->hasTag("wolf"))
+	Interacting_object* r = nullptr;
+	if (obj->hasTag("predator"))
 	{
-		Wolf* wolf = dynamic_cast<Wolf*>(obj);
-		SDL_Point wolfPos = wolf->getPosition();
+		Rendered_object* predator = dynamic_cast<Rendered_object*>(obj);
+		SDL_Point predatorPos = predator->getPosition();
 
-		if (inRange(position_, wolfPos, 30))
+		if (inRange(position_, predatorPos, 30))
 		{
 			//TODO: meilleure formule?
-			velocity_.x = position_.x - wolfPos.x;
-			velocity_.y = position_.y - wolfPos.y;
+			velocity_ = diff(position_, predatorPos);
 		}
 
 	}
@@ -61,12 +61,13 @@ void Sheep::interact(Interacting_object* obj)
 	{
 		if (obj->hasTag("sheep") && obj->hasTag("male") && obj->hasTag("grown") && obj->hasTag("alive"));
 		{
-			Sheep* partner = dynamic_cast<Sheep*>(obj);
+			Rendered_object* partner = dynamic_cast<Rendered_object*>(obj);
 
-			if (inRange(position_, partner->position_, 15))
-				mate();
+			if (inRange(position_, partner->getPosition(), 15))
+				r = mate();
 		}
 	}
+	return(r);
 }
 
 void Sheep::grow()
@@ -82,9 +83,11 @@ void Sheep::ready()
 	restCounter_ == -1;
 }
 
-void Sheep::mate()
+Interacting_object* Sheep::mate()
 {
 	//TODO: create new sheep
+	Rendered_object* r;
+	r = new Sheep(position_, window_);
 	removeTag("rested");
 	restCounter_ = frame_rate * 5;
 }

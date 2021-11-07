@@ -8,7 +8,7 @@ public:
 	//Constructors
 	Interacting_object();
 
-	virtual void interact(Interacting_object* obj) = 0;
+	virtual Interacting_object* interact(Interacting_object* obj) = 0;
 
 	//Accessor
 	bool hasTag(std::string tag);
