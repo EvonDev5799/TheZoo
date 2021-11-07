@@ -45,5 +45,13 @@ void Ground::add(Moving_object* pAnimal)
 	zoo_.push_back(pAnimal);
 }
 
-
+int Ground::gerScore() {
+	int score = 0;
+	for (auto a : zoo_) {
+		if (a->hasTag("prey") && a->hasTag("alive") ){
+			score++;
+		}
+	}
+	return score;
+}
 

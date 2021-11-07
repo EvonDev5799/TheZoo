@@ -17,7 +17,7 @@ public:
 	SDL_Surface getSurface();
 
 	void draw();
-
+	SDL_Surface* load_surface_for(const std::string& path, SDL_Surface* window_surface_ptr);
 protected:
 	// used to have smaller images if needed
 	float scale_;

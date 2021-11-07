@@ -4,7 +4,7 @@
 #include <iostream>
 #include <SDL_image.h>
 
-SDL_Surface* load_surface_for(const std::string& path, SDL_Surface* window_surface_ptr) {
+SDL_Surface* Rendered_object::load_surface_for(const std::string& path, SDL_Surface* window_surface_ptr) {
 
 	if (!window_surface_ptr) {
 		std::cout << "window not valid." << std::endl;
@@ -21,9 +21,9 @@ SDL_Surface* load_surface_for(const std::string& path, SDL_Surface* window_surfa
 }
 
 Rendered_object::Rendered_object(SDL_Point position, const std::string& image_path, SDL_Surface* window) :
-	position_(position), image_(load_surface_for(image_path, window)), window_(window), scale_(1)
+	position_(position), window_(window), scale_(1)
 {
-
+	image_ = load_surface_for(image_path, window);
 	auto color_key = SDL_MapRGB(image_->format, 0, 0, 0);
 	SDL_SetColorKey(image_, SDL_TRUE, color_key);
 }

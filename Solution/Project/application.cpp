@@ -70,8 +70,12 @@ int application::loop(unsigned period) {
         else 
         {
             SDL_Delay(timeTarget_ - SDL_GetTicks());
+           
         }       
-    }   
+    } 
+    std::cout << "Score : " << ground_->gerScore() << std::endl;
+    
+
     return 0;
 }
 

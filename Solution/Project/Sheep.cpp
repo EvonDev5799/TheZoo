@@ -6,7 +6,7 @@
 #include <cmath>
 
 Sheep::Sheep(SDL_Point position, SDL_Surface* window) :
-	Animal(position, "./media/sheep.png", window), maturityCounter_(frame_rate*5), restCounter_(0)
+	Animal(position, "./media/sheep.png", window), maturityCounter_(frame_rate*4), restCounter_(frame_rate * 4)
 {
 	scale_ = 0.5;
 	addTag("sheep");
@@ -57,7 +57,9 @@ void Sheep::move() {
 	else if (hasTag("dead"))
 	{
 		removeTag("dead");
-		SDL_FillRect(image_, NULL, SDL_MapRGB(image_->format, 255, 0, 0));
+		image_ = load_surface_for("./media/sheep_d.png", window_);
+		auto color_key = SDL_MapRGB(image_->format, 0, 0, 0);
+		SDL_SetColorKey(image_, SDL_TRUE, color_key);
 	}
 }
 
@@ -73,7 +75,7 @@ Animal* Sheep::interact(Interacting_object* obj)
 		{
 			//TODO: meilleure formule?
 			SDL_Point dir = diff(position_, predatorPos);
-			velocity_ = dirAndLenght(dir, 2);
+			velocity_ = dirAndLenght(dir, 3);
 		}
 
 	}

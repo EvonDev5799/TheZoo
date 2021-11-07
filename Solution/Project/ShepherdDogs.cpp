@@ -6,6 +6,10 @@ ShepherdDogs::ShepherdDogs(SDL_Point position, SDL_Surface* window) :
 	Animal(position, "./media/shepherdDog_.png", window), closestRange(frame_height + frame_width)
 {
 	addTag("dog");
+	addTag("protector");
+	int speed = 6;
+	velocity_.x = (std::rand() % speed) - (speed / 2);
+	velocity_.y = (std::rand() % speed) - (speed / 2);
 }
 
 void ShepherdDogs::move() {
@@ -24,17 +28,18 @@ void ShepherdDogs::move() {
 }
 
 Animal* ShepherdDogs::interact(Interacting_object* obj) {
-	if (obj->hasTag("player")) {
-		auto player = dynamic_cast<Rendered_object*>(obj);
+	if (obj->hasTag("shepherd")) {
+		auto player = dynamic_cast<Moving_object*>(obj);
 		closestRange = sqareRange(position_, player->getPosition());
-		if (closestRange < 10) {
-			//tourne en rond
-			auto temps = focusdirection(velocity_, player->getPosition());
+		if (closestRange <= 30 && closestRange >=20) {
+			SDL_Point dir = diff(player->getPosition(), position_);
+			auto temps = dirAndLenght(dir, 7);
 			velocity_.x = temps.y;
-			velocity_.y = temps.x;
+			velocity_.y = -temps.x;
 		}
-		else {
-			velocity_ = focusdirection(velocity_, player->getPosition()); //rejoind le joueur
+		else if (closestRange > 30) {
+			SDL_Point dir = diff(player->getPosition(), position_);
+			velocity_ = dirAndLenght(dir, 6);
 		}
 	}
 	return(nullptr);

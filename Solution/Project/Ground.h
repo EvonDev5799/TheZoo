@@ -14,6 +14,7 @@ public:
 
 	//méthode 
 	void update();
+	int gerScore();
 	//modificateur
 
 	void add(Moving_object* pAnimal);
