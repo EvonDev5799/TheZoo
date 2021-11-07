@@ -2,6 +2,7 @@
 #include "application.h"
 #include "inputManager.h"
 #include "Shepherd.h"
+#include "ShepherdDogs.h"
 
 
 
@@ -35,12 +36,11 @@ application::application(int n_sheep, int n_wolf,int n_shepherd)
         Wolf* wolf_ = new Wolf(position_,window_surface_ptr_);
         ground_->add(wolf_);
     }
-    /*
     for (int i = 0; i < n_shepherd; i++) {
-        sherpherdDog* sherpherdDog_ = new sherpherdDog(window_surface_ptr_);
-        ground_.add_animal(sherpherdDog_);
+        SDL_Point position_ = { std::rand() % (frame_width - 2 * frame_boundary) + frame_boundary,std::rand() % (frame_height - 2 * frame_boundary) + frame_boundary };
+        ShepherdDogs* shepherdDog_ = new ShepherdDogs(position_,window_surface_ptr_);
+        ground_->add(shepherdDog_);
     }
-    */
     //todo window_event_
     SDL_UpdateWindowSurface(window_ptr_);
     timeTarget_ = SDL_GetTicks();
