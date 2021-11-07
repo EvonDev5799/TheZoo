@@ -1,7 +1,7 @@
 #include "Shepherd.h"
 
 Shepherd::Shepherd(SDL_Point position, SDL_Surface* window) :
-	Playable_character(position, "./media/sheep.png", window)
+	Playable_character(position, "./media/link.png", window)
 {
 	addTag("alive");
 }
