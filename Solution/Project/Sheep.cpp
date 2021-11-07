@@ -86,7 +86,7 @@ void Sheep::ready()
 Animal* Sheep::mate()
 {
 	//TODO: create new sheep
-	Rendered_object* r;
+	Animal* r;
 	r = new Sheep(position_, window_);
 	removeTag("rested");
 	restCounter_ = frame_rate * 5;
