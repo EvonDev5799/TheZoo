@@ -9,7 +9,6 @@ public:
     Animal* interact(Interacting_object* obj) override;
 
 private:
-
     int closestRange;
 };
 
