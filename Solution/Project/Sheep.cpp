@@ -63,10 +63,11 @@ Animal* Sheep::interact(Interacting_object* obj)
 		Rendered_object* predator = dynamic_cast<Rendered_object*>(obj);
 		SDL_Point predatorPos = predator->getPosition();
 
-		if (inRange(position_, predatorPos, 10))
+		if (inRange(position_, predatorPos, 20))
 		{
 			//TODO: meilleure formule?
-			velocity_ = diff(position_, predatorPos);
+			SDL_Point dir = diff(position_, predatorPos);
+			velocity_ = dirAndLenght(dir, 2);
 		}
 
 	}
