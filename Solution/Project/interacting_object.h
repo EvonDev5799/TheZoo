@@ -7,9 +7,8 @@ class Interacting_object
 public:
 	//Constructors
 	Interacting_object();
-	Interacting_object(std::set<std::string> tags);
 
-	virtual void interact(Interacting_object& obj) = 0;
+	virtual void interact(Interacting_object* obj) = 0;
 
 	//Accessor
 	bool hasTag(std::string tag);

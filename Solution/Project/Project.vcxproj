@@ -159,19 +159,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="interacting_object.cpp" />
     <ClCompile Include="moving_object.cpp" />
     <ClCompile Include="rendered_object.cpp" />
+    <ClCompile Include="Sheep.cpp" />
     <ClCompile Include="source.cpp" />
+    <ClCompile Include="tools.cpp" />
+    <ClCompile Include="Wolf.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="definitions.h" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="inputManager.h" />
     <ClInclude Include="interacting_object.h" />
     <ClInclude Include="moving_object.h" />
     <ClInclude Include="rendered_object.h" />
+    <ClInclude Include="Sheep.h" />
+    <ClInclude Include="tools.h" />
+    <ClInclude Include="Wolf.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
