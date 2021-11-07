@@ -18,7 +18,7 @@ void Moving_object::step()
         position_.y = frame_boundary;
     }
     if (position_.x >= frame_width - frame_boundary) {
-        position_.x = frame_height - frame_boundary;
+        position_.x = frame_width - frame_boundary;
     }
     if (position_.y >= frame_height - frame_boundary) {
         position_.y = frame_height - frame_boundary;
