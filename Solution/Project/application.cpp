@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "application.h"
 #include "inputManager.h"
+#include "Shepherd.h"
 
 
 
@@ -20,18 +21,19 @@ application::application(int n_sheep, int n_wolf,int n_shepherd)
     
     ground_ = new Ground(window_surface_ptr_);
 
+    ground_->add(new Shepherd({200,200}, window_surface_ptr_));
     //animal
     std::srand((unsigned)time(nullptr));// initialise l'aléatoire des position x et y de l'animal;
     for (int i = 0; i < n_sheep; i++) {
         SDL_Point position_ = { std::rand() % (frame_width - 2*frame_boundary) + frame_boundary,std::rand() % (frame_height - 2*frame_boundary) + frame_boundary };
         Sheep* sheep_ = new Sheep(position_,window_surface_ptr_);        
-        ground_->add_animal(sheep_);
+        ground_->add(sheep_);
     }
     
     for (int i = 0; i < n_wolf; i++) {
         SDL_Point position_ = { std::rand() % (frame_width - 2*frame_boundary) + frame_boundary,std::rand() % (frame_height - 2*frame_boundary) + frame_boundary };
         Wolf* wolf_ = new Wolf(position_,window_surface_ptr_);
-        ground_->add_animal(wolf_);
+        ground_->add(wolf_);
     }
     /*
     for (int i = 0; i < n_shepherd; i++) {

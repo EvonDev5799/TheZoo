@@ -11,6 +11,7 @@ public:
 
     // modify the velocity, require override from child classes
     virtual void move() = 0;
+    virtual Moving_object* interact(Interacting_object* obj) override = 0;
 
 protected:
     //SDL_Point = 2dimensional vector

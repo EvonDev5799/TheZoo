@@ -66,6 +66,8 @@ SDL_Point focusdirection(SDL_Point reference, SDL_Point focus) {
 
 SDL_Point dirAndLenght(SDL_Point dir, int length)
 {
+	if (dir.x == 0 && dir.y == 0)
+		return dir;
 	SDL_Point r;
 	auto norme_ = norme(dir);
 	r.x = (dir.x*length) / norme_;

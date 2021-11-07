@@ -16,12 +16,12 @@ public:
 	void update();
 	//modificateur
 
-	void add_animal(Animal* pAnimal);
+	void add(Moving_object* pAnimal);
 
 private:
 	// Attention, NON-OWNING ptr, again to the screen
 	SDL_Surface* window_surface_ptr_;
 
-	std::vector<Animal*> zoo_;
+	std::vector<Moving_object*> zoo_;
 };
 
