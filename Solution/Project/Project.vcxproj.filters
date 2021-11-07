@@ -13,6 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Interacting_object">
+      <UniqueIdentifier>{d6b261e0-686b-459e-9fb3-6e8bd71a71c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interacting_object\Rendered_object">
+      <UniqueIdentifier>{b928dbfd-4a6b-4547-9260-90e232f632c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interacting_object\Rendered_object\Moving_object">
+      <UniqueIdentifier>{6a125ffe-8805-4120-a4dd-85308d0e5051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interacting_object\Rendered_object\Moving_object\Animal">
+      <UniqueIdentifier>{ebead9e6-af73-4eed-8e4d-5258fe547f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interacting_object">
+      <UniqueIdentifier>{4fd0c7aa-7e7d-4c99-9024-a4b9d6383b76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interacting_object\Rendered_object">
+      <UniqueIdentifier>{e393aed5-68c5-4698-becf-4449abe55324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interacting_object\Rendered_object\Moving_object">
+      <UniqueIdentifier>{622118d0-8e78-4f59-90cd-bc9ffa898073}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interacting_object\Rendered_object\Moving_object\Animal">
+      <UniqueIdentifier>{f26d36cf-060d-467e-b827-ac74f91a9c14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source.cpp">
@@ -24,26 +48,29 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="interacting_object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rendered_object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="moving_object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Animal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sheep.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Wolf.cpp">
+    <ClCompile Include="ground.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>Source Files\Interacting_object\Rendered_object\Moving_object\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Wolf.cpp">
+      <Filter>Source Files\Interacting_object\Rendered_object\Moving_object\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="interacting_object.cpp">
+      <Filter>Source Files\Interacting_object</Filter>
+    </ClCompile>
+    <ClCompile Include="rendered_object.cpp">
+      <Filter>Source Files\Interacting_object\Rendered_object</Filter>
+    </ClCompile>
+    <ClCompile Include="moving_object.cpp">
+      <Filter>Source Files\Interacting_object\Rendered_object\Moving_object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sheep.cpp">
+      <Filter>Source Files\Interacting_object\Rendered_object\Moving_object\Animal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,29 +80,32 @@
     <ClInclude Include="Game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="interacting_object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rendered_object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="moving_object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Animal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sheep.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="definitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wolf.h">
+    <ClInclude Include="ground.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wolf.h">
+      <Filter>Header Files\Interacting_object\Rendered_object\Moving_object\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Sheep.h">
+      <Filter>Header Files\Interacting_object\Rendered_object\Moving_object\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="rendered_object.h">
+      <Filter>Header Files\Interacting_object\Rendered_object</Filter>
+    </ClInclude>
+    <ClInclude Include="moving_object.h">
+      <Filter>Header Files\Interacting_object\Rendered_object\Moving_object</Filter>
+    </ClInclude>
+    <ClInclude Include="interacting_object.h">
+      <Filter>Header Files\Interacting_object</Filter>
+    </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>Header Files\Interacting_object\Rendered_object\Moving_object\Animal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
