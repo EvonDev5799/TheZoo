@@ -7,7 +7,7 @@ Wolf::Wolf(SDL_Point position, SDL_Surface* window) :
 	Animal(position, "./media/wolf.png", window), hungerCount_(frame_rate * 15), closestRange(frame_height + frame_width)
 {
 	addTag("wolf");
-	addTag("predateur");
+	addTag("predator");
 	auto speed = 6;
 	velocity_.x = (std::rand() % speed) - (speed / 2);
 	velocity_.y = (std::rand() % speed) - (speed / 2);
