@@ -17,7 +17,6 @@ application::application(int n_sheep, int n_wolf,int n_shepherd)
         SDL_Delay(10000);
     }
     window_surface_ptr_ = SDL_GetWindowSurface(window_ptr_);
-    SDL_FillRect(window_surface_ptr_, NULL,SDL_MapRGB(window_surface_ptr_->format, 0, 127, 0));
     
     ground_ = new Ground(window_surface_ptr_);
 
@@ -59,8 +58,11 @@ int application::loop(unsigned period) {
     while (SDL_GetTicks() < period) {
         if (SDL_GetTicks() >= timeTarget_) {
             timeTarget_ += (frame_time * 1000);
+            SDL_FillRect(window_surface_ptr_, NULL, SDL_MapRGB(window_surface_ptr_->format, 0, 127, 0));
+
             zoo::InputManager::update();
             ground_->update();
+
             SDL_UpdateWindowSurface(window_ptr_);
         } 
         else 

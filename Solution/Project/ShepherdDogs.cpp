@@ -23,4 +23,5 @@ Animal* ShepherdDogs::interact(Interacting_object* obj) {
 			velocity_ = focusdirection(velocity_, player->getPosition()); //rejoind le joueur
 		}
 	}
+	return(nullptr);
 }
