@@ -6,7 +6,7 @@ class Sheep :
 public:
     Sheep(SDL_Point position, SDL_Surface* window);
     void move() override;
-    Interacting_object* interact(Interacting_object* obj) override;
+    Animal* interact(Interacting_object* obj) override;
 
 private:
     void grow();
