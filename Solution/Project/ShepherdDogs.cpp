@@ -18,6 +18,9 @@ Animal* ShepherdDogs::interact(Interacting_object* obj) {
 		closestRange = sqareRange(position_, player->getPosition());
 		if (closestRange < 10) {
 			//tourne en rond
+			auto temps = focusdirection(velocity_, player->getPosition());
+			velocity_.x = temps.y;
+			velocity_.y = temps.x;
 		}
 		else {
 			velocity_ = focusdirection(velocity_, player->getPosition()); //rejoind le joueur
