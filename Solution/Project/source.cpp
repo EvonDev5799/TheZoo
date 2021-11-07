@@ -29,22 +29,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << "Starting up the application" << std::endl;
 
-    if (argc != 5)
-        throw std::runtime_error("Need three arguments - "
-            "number of sheep, number of wolves,number of sheepherdDog "
-            "simulation time\n");
-
-    // Initialize SDL
-    if (SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO) < 0)
-        throw std::runtime_error("init():" + std::string(SDL_GetError()));
-
-    // Initialize PNG loading
-    int imgFlags = IMG_INIT_PNG;
-    if (!(IMG_Init(imgFlags) & imgFlags))
-        throw std::runtime_error("init(): SDL_image could not initialize! "
-            "SDL_image Error: " +
-            std::string(IMG_GetError()));
-
+    init();
 
     std::cout << "Done with initilization" << std::endl;
     application my_app(std::stoul(argv[1]), std::stoul(argv[2]), std::stoul(argv[3]));
