@@ -161,7 +161,6 @@
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="application.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="interacting_object.cpp" />
@@ -177,7 +176,6 @@
     <ClInclude Include="Animal.h" />
     <ClInclude Include="application.h" />
     <ClInclude Include="definitions.h" />
-    <ClInclude Include="Game.hpp" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="inputManager.h" />
     <ClInclude Include="interacting_object.h" />

@@ -1,7 +1,7 @@
 #pragma once
 #include "Wolf.h"
 #include "Sheep.h"
-#include "tools.cpp"
+#include "tools.h"
 
 Wolf::Wolf(SDL_Point position, SDL_Surface* window) :
 	Animal(position, "./media/wolf.png", window), hungerCount_(frame_rate * 15), closestRange(frame_height + frame_width)
@@ -35,10 +35,7 @@ Animal* Wolf::interact(Interacting_object* obj)
 			{
 				velocity_ = diff({ 0,0 }, focusdirection(velocity_, animal_pos)); // par à l'opposé
 			}
-			if (obj->hasTag("wolf")) //chien du berger 
-			{
-				velocity_ = diff({ 0,0 }, focusdirection(velocity_, animal_pos)); // par à l'opposé
-			}
+			
 		}
 		
 	}
