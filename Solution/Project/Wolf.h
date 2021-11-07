@@ -7,11 +7,11 @@ class Wolf :
 public:
     Wolf(SDL_Point position, SDL_Surface* window);
     void move() override;
-    void interact(Interacting_object* obj) override;
+    virtual Interacting_object* interact(Interacting_object* obj) override;
 
 private:
     int hungerCount_;
-    int closestRangeDog_;
-    int closestRangeSheep_;
+    int closestRange_Dog;
+    int closestRange_Sheep;
 };
 
