@@ -18,7 +18,7 @@ SDL_Point diff(SDL_Point end, SDL_Point start)
 
 bool inRange(SDL_Point a, SDL_Point b, int range)
 {
-	return((sqareRange(a, b) < range);
+	return(sqareRange(a, b) < range);
 }
 
 int sqareRange(SDL_Point a, SDL_Point b)

@@ -4,6 +4,7 @@ Interacting_object::Interacting_object() : tags_({})
 {
 }
 
+
 bool Interacting_object::hasTag(std::string tag)
 {
 	return( tags_.find(tag) != tags_.end());

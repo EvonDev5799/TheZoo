@@ -5,5 +5,6 @@ class Animal :
 {
 public:
     Animal(SDL_Point position, const std::string& image_path, SDL_Surface* window);
+    ~Animal();
 };
 

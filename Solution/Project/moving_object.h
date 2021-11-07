@@ -5,7 +5,6 @@ class Moving_object :
 {
 public:
     Moving_object(SDL_Point position, const std::string& image_path, SDL_Surface* window);
-
     // apply the current velocity to the current position
     void step();
 

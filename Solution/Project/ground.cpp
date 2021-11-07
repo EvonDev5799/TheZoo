@@ -2,12 +2,11 @@
 #include <vector>
 
 ground::ground(SDL_Surface* window_surface_ptr)
-    : window_surface_ptr_(window_surface_ptr), aZoo(std::map<animal*, const char*>{}) {}
+    : window_surface_ptr_(window_surface_ptr), aZoo(std::vector<Animal*>{}) {}
 
 ground::~ground() {
-    for (auto pair_ : this->aZoo) {
-        pair_.first->~animal();
-        delete(pair_.second);
+    for (auto vAnimal : this->aZoo) {
+        vAnimal->~Animal();
     }
 }
 
@@ -16,17 +15,23 @@ void ground::setScreen_ptr(SDL_Surface* window_surface_ptr) {
     this->window_surface_ptr_ = window_surface_ptr;
 }
 
+void ground::add_animal(Animal* pAnimal) {
+    this->aZoo.push_back(pAnimal);
+}
 
 //méthode 
 void ground::update() {
 
     SDL_FillRect(this->window_surface_ptr_, NULL, SDL_MapRGB(this->window_surface_ptr_->format, 0, 127, 0));
-    auto babys_sheep = std::vector<sheep*>();
-    for (auto pair_ : this->aZoo) {
+    auto babys_sheep = std::vector<Sheep*>();
+    for (auto vAnimal1 : this->aZoo) {
         
-        pair_.first->move();
-        babys_sheep.push_back( offspring(pair_)); //creer des enfants si possible et le stocke
-        pair_.first->draw();
+        vAnimal1->move();
+        for (auto vAnimal2 : this->aZoo)
+            if (vAnimal1!=vAnimal2)
+                
+                vAnimal1->interact(vAnimal2); 
+        vAnimal1->draw();
         
     }
 
@@ -35,44 +40,18 @@ void ground::update() {
             
             this->add_animal(vSheep); //on ne modifie pas l'attribu pendant qu'on le parcours 
             vSheep->draw();
-            std::cout << "draw" << std::endl;
         }
     }
 
 }
 
-sheep* ground::offspring(std::pair<animal*, const char*> pPair) {
-    if (pPair.second == "sheep") {
-        for (auto pair_ : this->aZoo) {
-            if (pair_.second == "sheep" && pair_.first != pPair.first) {
-                sheep* vSheep1 = (sheep*)pair_.first;
-                sheep* vSheep2 = (sheep*)pPair.first;
-                if (vSheep1->getSex() != vSheep2->getSex()) {
-                    bool bol_relative_x = abs(pPair.first->getPosX() - pair_.first->getPosX()) <= pair_.first->getimage()->w * 0.7;
-                    bool bol_relative_y = abs(pPair.first->getPosY() - pair_.first->getPosY()) <= pair_.first->getimage()->h * 0.7;
-                    if (bol_relative_x && bol_relative_y) {
-                        std::cout << "proche" << std::endl;
-                        if (vSheep1->getSex() == 0 && vSheep1->getCHC() >= vSheep1->getTimeMin()) {
-                            std::cout << "sheep::offspring::enfants_start" << std::endl;
-                            vSheep1->setHavaCheildren(0);
-                            sheep* vCheild = new sheep(this->window_surface_ptr_);
-                            vCheild->setPosX(vSheep1->getPosX() + 10);
-                            vCheild->setPosY(vSheep1->getPosY() + 10);
-                            return vCheild;
-                        }
-                        else if (vSheep2->getSex() == 0 && vSheep2->getCHC() >= vSheep2->getTimeMin()) {
-                            std::cout << "sheep::offspring::enfants_start" << std::endl;
-                            vSheep2->setHavaCheildren(0);
-                            sheep* vCheild = new sheep(this->window_surface_ptr_);
-                            vCheild->setPosX(vSheep2->getPosX() + 10);
-                            vCheild->setPosY(vSheep2->getPosY() + 10);
-                            return vCheild;
-                        }
-                    }
-
-                }
-
-            }
+Sheep* ground::offspring(Animal* pAnimal) {
+    if (pAnimal->hasTag("sheep") && pAnimal->hasTag("femelle")) {
+        Sheep* vSheep = dynamic_cast<Sheep*>(pAnimal);
+        Sheep* vCheild;
+        for (auto vAnimal : this->aZoo) {
+            vCheild = vSheep->reproduction(vAnimal);
+            if (vCheild != nullptr) return vCheild;
         }
     }
     return nullptr;
