@@ -10,5 +10,6 @@ float norme(SDL_Point v);
 SDL_Point UnitVector(SDL_Point v);
 SDL_Point construcVector(SDL_Point referecne_point, SDL_Point other_point);
 SDL_Point focusdirection(SDL_Point reference, SDL_Point focus);
+SDL_Point dirAndLenght(SDL_Point dir, int length);
 SDL_Point mult(float scalare, SDL_Point b);
 SDL_Point div(float scalare, SDL_Point b);

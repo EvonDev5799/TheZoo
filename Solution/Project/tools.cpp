@@ -71,3 +71,12 @@ SDL_Point focusdirection(SDL_Point reference, SDL_Point focus) {
 	new_velocity = div(norme(new_velocity), new_velocity);
 	return mult(norme_reference,new_velocity);
 }
+
+SDL_Point dirAndLenght(SDL_Point dir, int length)
+{
+	SDL_Point r;
+	auto norme_ = norme(dir);
+	r.x = (dir.x*length) / norme_;
+	r.y = (dir.y*length) / norme_;
+	return(r);
+}
