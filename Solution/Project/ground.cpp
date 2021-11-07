@@ -35,6 +35,7 @@ void Ground::update()
 	for (auto a : toAdd)
 	{
 		add_animal(a);
+		a->draw();
 	}
 }
 
