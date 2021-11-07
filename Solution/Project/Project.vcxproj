@@ -160,6 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="application.cpp" />
     <ClCompile Include="ground.cpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="interacting_object.cpp" />
@@ -172,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
+    <ClInclude Include="application.h" />
     <ClInclude Include="definitions.h" />
     <ClInclude Include="ground.h" />
     <ClInclude Include="inputManager.h" />
