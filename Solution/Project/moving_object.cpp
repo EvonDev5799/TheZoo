@@ -12,15 +12,15 @@ void Moving_object::step()
 	position_.y += velocity_.y;
 
     if (position_.x <= frame_boundary) {
-        position_.x = frame_boundary;
+        velocity_.x = abs(velocity_.x);
     }
     if (position_.y <= frame_boundary) {
-        position_.y = frame_boundary;
+        velocity_.y = abs(velocity_.y);
     }
     if (position_.x >= frame_width - frame_boundary) {
-        position_.x = frame_width - frame_boundary;
+        velocity_.x = -abs(velocity_.x);
     }
     if (position_.y >= frame_height - frame_boundary) {
-        position_.y = frame_height - frame_boundary;
+        velocity_.y = -abs(velocity_.y);
     }
 }

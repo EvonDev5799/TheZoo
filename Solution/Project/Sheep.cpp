@@ -12,7 +12,7 @@ Sheep::Sheep(SDL_Point position, SDL_Surface* window) :
 	addTag("sheep");
 	addTag("prey");
 
-	int speed = 10;
+	int speed = 4;
 	velocity_.x = (std::rand() % speed) - (speed / 2);
 	velocity_.y = (std::rand() % speed) - (speed / 2);
 

@@ -8,6 +8,9 @@ Wolf::Wolf(SDL_Point position, SDL_Surface* window) :
 {
 	addTag("wolf");
 	addTag("predateur");
+	auto speed = 6;
+	velocity_.x = (std::rand() % speed) - (speed / 2);
+	velocity_.y = (std::rand() % speed) - (speed / 2);
 
 }
 
