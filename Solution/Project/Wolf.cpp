@@ -41,22 +41,28 @@ Animal* Wolf::interact(Interacting_object* obj)
 	if (obj->hasTag("alive") ){
 		Rendered_object* animal_ = dynamic_cast<Rendered_object*>(obj);
 		auto animal_pos = animal_->getPosition();
+		int range = sqareRange(position_, animal_pos);
 
-		if (closestRange > sqareRange(position_, animal_pos)) {
-			closestRange = sqareRange(position_, animal_pos);
-			if (obj->hasTag("prey")) //sheep or other
+		if (obj->hasTag("prey"))
+		{
+			if (range < 50)
 			{
+				obj->removeTag("alive");
+				hungerCount_ += frame_rate * 2;
+			}
+			else if (range < closestRange)
+			{
+				closestRange = sqareRange(position_, animal_pos);
 				SDL_Point dir = diff(animal_pos, position_);
 				velocity_ = dirAndLenght(dir, 7);
 			}
-			if (obj->hasTag("dog")) //chien du berger 
-			{
-				SDL_Point dir = diff(animal_pos, position_);
-				velocity_ = dirAndLenght(dir, -7);
-			}
-			
 		}
-		
+		else if (obj->hasTag("dog"))
+		{
+			closestRange = sqareRange(position_, animal_pos);
+			SDL_Point dir = diff(animal_pos, position_);
+			velocity_ = dirAndLenght(dir, -7);
+		}		
 	}
 
 	if (hungerCount_ <= 0) {
