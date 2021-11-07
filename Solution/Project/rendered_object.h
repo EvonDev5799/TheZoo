@@ -16,8 +16,9 @@ public:
 	SDL_Point getPosition();
 	SDL_Surface getSurface();
 
+	//méthode
 	void draw();
-
+	
 protected:
 	// used to have smaller images if needed
 	float scale_;

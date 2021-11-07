@@ -57,16 +57,21 @@ void Sheep::interact(Interacting_object* obj)
 		}
 
 	}
-	else if (hasTag("female") && hasTag("grown") && hasTag("rested"))
-	{
-		if (obj->hasTag("sheep") && obj->hasTag("male") && obj->hasTag("grown") && obj->hasTag("alive"));
-		{
-			Sheep* partner = dynamic_cast<Sheep*>(obj);
+	
+}
 
-			if (inRange(position_, partner->position_, 15))
+Sheep* Sheep::reproduction(Animal* obj) {
+	if ( hasTag("grown") && hasTag("rested")) //hasTag("female"), on c'est que ça vrai, vérifier dans le ground)
+	{
+		if (obj->hasTag("sheep") && obj->hasTag("male") && obj->hasTag("grown") && obj->hasTag("alive")){
+			if (inRange(position_, obj->getPosition(), reproduction_Distance)) {
 				mate();
+				return new Sheep(sum(position_, { 10,10 }), window_);
+			}
+				
 		}
 	}
+	return nullptr;
 }
 
 void Sheep::grow()
@@ -88,4 +93,5 @@ void Sheep::mate()
 	removeTag("rested");
 	restCounter_ = frame_rate * 5;
 }
+
 
